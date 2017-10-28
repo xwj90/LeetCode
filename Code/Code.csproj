@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="17.cs" />
+    <Compile Include="16.cs" />
+    <Compile Include="15.cs" />
     <Compile Include="11.cs" />
     <Compile Include="10.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

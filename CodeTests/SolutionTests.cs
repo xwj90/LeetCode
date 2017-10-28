@@ -36,5 +36,29 @@ namespace Tests
             Assert.AreEqual(9, new Solution().MaxArea(new int[] { 1, 1, 9, 9, 1, 1 }));
 
         }
+
+        [TestMethod()]
+        public void ThreeSumTest()
+        {
+            var r = new Solution().ThreeSum(new int[] { -1, 0, 1, 2, -1, -4 });
+            Assert.AreEqual(2, r.Count);
+            Assert.IsTrue(r.All(p => p.Sum() == 0));
+        }
+
+        [TestMethod()]
+        public void ThreeSumClosestTest()
+        {
+            Assert.AreEqual(2, new Solution().ThreeSumClosest(new int[] { -1, 2, 1, 4 }, 1));
+
+        }
+
+        [TestMethod()]
+        public void LetterCombinationsTest()
+        {
+
+            Assert.AreEqual(9, new Solution().LetterCombinations("23").Count);            
+            Assert.AreEqual(0, new Solution().LetterCombinations("").Count);
+
+        }
     }
 }

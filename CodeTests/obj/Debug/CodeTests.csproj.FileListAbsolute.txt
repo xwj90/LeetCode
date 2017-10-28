@@ -1,0 +1,15 @@
+C:\repos\LeetCode\CodeTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\repos\LeetCode\CodeTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\repos\LeetCode\CodeTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\repos\LeetCode\CodeTests\bin\Debug\CodeTests.dll
+C:\repos\LeetCode\CodeTests\bin\Debug\CodeTests.pdb
+C:\repos\LeetCode\CodeTests\bin\Debug\Code.dll
+C:\repos\LeetCode\CodeTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\repos\LeetCode\CodeTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\repos\LeetCode\CodeTests\bin\Debug\Code.pdb
+C:\repos\LeetCode\CodeTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\repos\LeetCode\CodeTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\repos\LeetCode\CodeTests\obj\Debug\CodeTests.csprojResolveAssemblyReference.cache
+C:\repos\LeetCode\CodeTests\obj\Debug\CodeTests.csproj.CoreCompileInputs.cache
+C:\repos\LeetCode\CodeTests\obj\Debug\CodeTests.dll
+C:\repos\LeetCode\CodeTests\obj\Debug\CodeTests.pdb
