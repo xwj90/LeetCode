@@ -40,11 +40,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="29.cs" />
+    <Compile Include="28.cs" />
+    <Compile Include="27.cs" />
+    <Compile Include="26.cs" />
+    <Compile Include="25.cs" />
+    <Compile Include="24.cs" />
+    <Compile Include="23.cs" />
+    <Compile Include="22.cs" />
+    <Compile Include="21.cs" />
+    <Compile Include="20.cs" />
+    <Compile Include="19.cs" />
     <Compile Include="17.cs" />
     <Compile Include="16.cs" />
     <Compile Include="15.cs" />
     <Compile Include="11.cs" />
     <Compile Include="10.cs" />
+    <Compile Include="Core\ListNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
