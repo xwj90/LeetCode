@@ -140,8 +140,50 @@ namespace Tests
             Assert.AreEqual(0, new Solution().StrStr("abc", "abc"));
             Assert.AreEqual(3, new Solution().StrStr("aaaabc", "ab"));
             Assert.AreEqual(-1, new Solution().StrStr("aaa", "aaaa"));
-         
 
+
+
+        }
+
+        [TestMethod()]
+        public void SearchTest()
+        {
+
+            Assert.AreEqual(0, new Solution().Search(new int[] { 4, 5, 6, 7, 0, 1, 2 }, 4));
+            Assert.AreEqual(5, new Solution().Search(new int[] { 4, 5, 6, 7, 0, 1, 2 }, 1));
+            Assert.AreEqual(-1, new Solution().Search(new int[] { 4, 5, 6, 8, 0, 1, 2 }, 7));
+            Assert.AreEqual(-1, new Solution().Search(new int[] { 5, 6, 7, 8, 0, 1, 2 }, 4));
+        }
+
+        [TestMethod()]
+        public void LongestValidParenthesesTest()
+        {
+            Assert.AreEqual(0, new Solution().LongestValidParentheses(""));
+            Assert.AreEqual(6, new Solution().LongestValidParentheses("()()()"));
+            Assert.AreEqual(4, new Solution().LongestValidParentheses("(((((()()"));
+            Assert.AreEqual(8, new Solution().LongestValidParentheses("(()()((((()()()()(("));
+            Assert.AreEqual(2, new Solution().LongestValidParentheses("())"));
+        }
+
+        [TestMethod()]
+        public void TrapTest()
+        {
+            Assert.AreEqual(6, new Solution().Trap(new int[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 }));
+
+        }
+
+        [TestMethod()]
+        public void JumpTest()
+        {
+            Assert.AreEqual(2, new Solution().Jump(new int[] { 2, 3, 1, 1, 4 }));
+            Assert.AreEqual(1, new Solution().Jump(new int[] { 2, 1 }));
+            Assert.AreEqual(2, new Solution().Jump(new int[] { 1, 2, 0, 1 }));
+            int[] aa = new int[10000];
+            for (int i = 0; i < aa.Length; i++)
+            {
+                aa[i] = 1;
+            }
+            Assert.AreEqual(aa.Length - 1, new Solution().Jump(aa));
 
         }
     }

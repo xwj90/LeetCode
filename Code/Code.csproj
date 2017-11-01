@@ -41,6 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="29.cs" />
+    <Compile Include="45.cs" />
+    <Compile Include="42.cs" />
+    <Compile Include="32.cs" />
+    <Compile Include="33.cs" />
     <Compile Include="28.cs" />
     <Compile Include="27.cs" />
     <Compile Include="26.cs" />
