@@ -186,5 +186,18 @@ namespace Tests
             Assert.AreEqual(aa.Length - 1, new Solution().Jump(aa));
 
         }
+
+        [TestMethod()]
+        public void MinDistanceTest()
+        {
+            Assert.AreEqual(0, new Solution().MinDistance("", ""));
+            Assert.AreEqual(0, new Solution().MinDistance("a", "a"));
+            Assert.AreEqual(2, new Solution().MinDistance("a", "abc"));
+            Assert.AreEqual(2, new Solution().MinDistance("abd", "bc"));
+            Assert.AreEqual(1, new Solution().MinDistance("abababa", "adbababa"));
+            Assert.AreEqual(6, new Solution().MinDistance("dinitrophenylhydrazine", "acetylphenylhydrazine"));
+
+ 
+        }
     }
 }

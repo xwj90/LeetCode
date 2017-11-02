@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="29.cs" />
+    <Compile Include="76.cs" />
+    <Compile Include="72.cs" />
+    <Compile Include="57.cs" />
     <Compile Include="45.cs" />
     <Compile Include="42.cs" />
     <Compile Include="32.cs" />
@@ -60,6 +63,7 @@
     <Compile Include="15.cs" />
     <Compile Include="11.cs" />
     <Compile Include="10.cs" />
+    <Compile Include="Core\Interval.cs" />
     <Compile Include="Core\ListNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
