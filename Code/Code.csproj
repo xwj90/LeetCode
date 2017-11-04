@@ -41,6 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="29.cs" />
+    <Compile Include="99.cs" />
+    <Compile Include="97.cs" />
+    <Compile Include="87.cs" />
+    <Compile Include="85.cs" />
+    <Compile Include="84.cs" />
     <Compile Include="76.cs" />
     <Compile Include="72.cs" />
     <Compile Include="57.cs" />
@@ -63,6 +68,7 @@
     <Compile Include="15.cs" />
     <Compile Include="11.cs" />
     <Compile Include="10.cs" />
+    <Compile Include="Core\TreeNode.cs" />
     <Compile Include="Core\Interval.cs" />
     <Compile Include="Core\ListNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

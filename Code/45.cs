@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 public partial class Solution
 {
-    int[] Jump_nums;
+ 
     public int Jump(int[] nums)
     {
         if (nums.Length < 2)

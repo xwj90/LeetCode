@@ -197,7 +197,44 @@ namespace Tests
             Assert.AreEqual(1, new Solution().MinDistance("abababa", "adbababa"));
             Assert.AreEqual(6, new Solution().MinDistance("dinitrophenylhydrazine", "acetylphenylhydrazine"));
 
- 
+
+        }
+
+        [TestMethod()]
+        public void MinWindowTest()
+        {
+            Assert.AreEqual("ba", new Solution().MinWindow("bba", "ab"));
+            Assert.AreEqual("a", new Solution().MinWindow("a", "a"));
+            Assert.AreEqual("BANC", new Solution().MinWindow("ADOBECODEBANC", "ABC"));
+            Assert.AreEqual("b_ca", new Solution().MinWindow("a_b_c_________b_ca", "abc"));
+        }
+
+        [TestMethod()]
+        public void LargestRectangleAreaTest()
+        {
+
+            // Assert.AreEqual(8, new Solution().LargestRectangleArea(new int[] { 1, 1, 2, 2, 3, 3, 1 }));
+            Assert.AreEqual(10, new Solution().LargestRectangleArea(new int[] { 2, 1, 5, 6, 2, 3 }));
+
+        }
+
+        [TestMethod()]
+        public void IsScrambleTest()
+        {
+            Assert.AreEqual(false, new Solution().IsScramble("abcd", "bdac"));
+        }
+
+        [TestMethod()]
+        public void IsInterleaveTest()
+        {
+            Assert.AreEqual(true, new Solution().IsInterleave("a", "", "a"));
+            Assert.AreEqual(true, new Solution().IsInterleave("aa", "ab", "abaa"));
+            Assert.AreEqual(true, new Solution().IsInterleave("aabcc", "dbbca", "aadbbcbcac"));
+            Assert.AreEqual(false, new Solution().IsInterleave("aabcc", "dbbca", "aadbbbaccc"));
+            Assert.AreEqual(false, new Solution().IsInterleave(
+           "bbbbbabbbbabaababaaaabbababbaaabbabbaaabaaaaababbbababbbbbabbbbababbabaabababbbaabababababbbaaababaa",
+"babaaaabbababbbabbbbaabaabbaabbbbaabaaabaababaaaabaaabbaaabaaaabaabaabbbbbbbbbbbabaaabbababbabbabaab",
+"babbbabbbaaabbababbbbababaabbabaabaaabbbbabbbaaabbbaaaaabbbbaabbaaabababbaaaaaabababbababaababbababbbababbbbaaaabaabbabbaaaaabbabbaaaabbbaabaaabaababaababbaaabbbbbabbbbaabbabaabbbbabaaabbababbabbabbab"));
         }
     }
 }
