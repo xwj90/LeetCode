@@ -236,5 +236,29 @@ namespace Tests
 "babaaaabbababbbabbbbaabaabbaabbbbaabaaabaababaaaabaaabbaaabaaaabaabaabbbbbbbbbbbabaaabbababbabbabaab",
 "babbbabbbaaabbababbbbababaabbabaabaaabbbbabbbaaabbbaaaaabbbbaabbaaabababbaaaaaabababbababaababbababbbababbbbaaaabaabbabbaaaaabbabbaaaabbbaabaaabaababaababbaaabbbbbabbbbaabbabaabbbbabaaabbababbabbabbab"));
         }
+
+        [TestMethod()]
+        public void MaxProfitTest()
+        {
+            Assert.AreEqual(6, new Solution().MaxProfit(new int[] { 3, 2, 6, 7, 4, 5 }));
+            Assert.AreEqual(0, new Solution().MaxProfit(new int[] { }));
+            Assert.AreEqual(0, new Solution().MaxProfit(new int[] { 1 }));
+            Assert.AreEqual(0, new Solution().MaxProfit(new int[] { 2, 1 }));
+            Assert.AreEqual(1, new Solution().MaxProfit(new int[] { 1, 2 }));
+
+
+        }
+
+        [TestMethod()]
+        public void MaxPathSumTest()
+        {
+            Assert.AreEqual(-1000, new Solution().MaxPathSum(TreeNode.Create(new int[] { -1000, -2000, -3000 })));
+            Assert.AreEqual(-1000, new Solution().MaxPathSum(TreeNode.Create(new int[] { -3000, -2000, -1000 })));
+            Assert.AreEqual(4, new Solution().MaxPathSum(TreeNode.Create(new int[] { 1, -2, 3 })));
+            Assert.AreEqual(1, new Solution().MaxPathSum(TreeNode.Create(new int[] { -2, 1 })));
+            Assert.AreEqual(-2, new Solution().MaxPathSum(TreeNode.Create(new int[] { -2 })));
+            Assert.AreEqual(1, new Solution().MaxPathSum(TreeNode.Create(new int[] { 1 })));
+            Assert.AreEqual(26, new Solution().MaxPathSum(TreeNode.Create(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 })));
+        }
     }
 }
