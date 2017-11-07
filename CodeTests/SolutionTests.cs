@@ -260,5 +260,110 @@ namespace Tests
             Assert.AreEqual(1, new Solution().MaxPathSum(TreeNode.Create(new int[] { 1 })));
             Assert.AreEqual(26, new Solution().MaxPathSum(TreeNode.Create(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 })));
         }
+
+        [TestMethod()]
+        public void MinCutTest()
+        {
+            Assert.AreEqual(0, new Solution().MinCut("aba"));
+        }
+
+        [TestMethod()]
+        public void WordBreakTest()
+        {
+            Assert.AreEqual(0, new Solution().WordBreak("catsanddog", new List<string>() { "cat", "cats", "and", "sand", "dog" }));
+        }
+
+        [TestMethod()]
+        public void MaxPointsTest()
+        {
+            Point[] points = new Point[] { new Point(0, 0) };
+            Assert.AreEqual(1, new Solution().MaxPoints(points));
+
+            points = new Point[] { new Point(0, 0), new Point(1, 1), new Point(2, 2) };
+            Assert.AreEqual(3, new Solution().MaxPoints(points));
+            points = new Point[] { new Point(0, 0), new Point(-1, -1), new Point(2, 2) };
+            Assert.AreEqual(3, new Solution().MaxPoints(points));
+            points = new Point[] { new Point(1, 1), new Point(1, 1), new Point(2, 2), new Point(2, 2) };
+            Assert.AreEqual(4, new Solution().MaxPoints(points));
+        }
+
+        [TestMethod()]
+        public void SearchRangeTest()
+        {
+            var r = new Solution().SearchRange(new int[] { 2, 2 }, 3);
+            Assert.AreEqual(-1, r[0]);
+            Assert.AreEqual(-1, r[1]);
+
+            r = new Solution().SearchRange(new int[] { 2, 2 }, 1);
+            Assert.AreEqual(-1, r[0]);
+            Assert.AreEqual(-1, r[1]);
+
+            r = new Solution().SearchRange(new int[] { 1, 1, 3, 3 }, 2);
+            Assert.AreEqual(-1, r[0]);
+            Assert.AreEqual(-1, r[1]);
+            r = new Solution().SearchRange(new int[] { 1, 3, 3 }, 2);
+            Assert.AreEqual(-1, r[0]);
+            Assert.AreEqual(-1, r[1]);
+
+            r = new Solution().SearchRange(new int[] { 1, 2, 3, 4, 5, 6 }, 5);
+            Assert.AreEqual(4, r[0]);
+            Assert.AreEqual(4, r[1]);
+
+
+            r = new Solution().SearchRange(new int[] { 1, 2, 3, 4, 5, 5, 5, 5, 5, 5, 6 }, 5);
+            Assert.AreEqual(4, r[0]);
+            Assert.AreEqual(9, r[1]);
+
+            r = new Solution().SearchRange(new int[] { }, 5);
+            Assert.AreEqual(-1, r[0]);
+            Assert.AreEqual(-1, r[1]);
+            r = new Solution().SearchRange(new int[] { 5 }, 5);
+            Assert.AreEqual(0, r[0]);
+            Assert.AreEqual(0, r[1]);
+
+            r = new Solution().SearchRange(new int[] { 2, 2 }, 3);
+            Assert.AreEqual(-1, r[0]);
+            Assert.AreEqual(-1, r[1]);
+        }
+
+        [TestMethod()]
+        public void FindMinTest()
+        {
+            Assert.AreEqual(1, new Solution().FindMin(new int[] { 3, 1 }));
+        }
+
+        [TestMethod()]
+        public void CalculateTest()
+        {
+            Assert.AreEqual(30, new Solution().Calculate("   30"));
+            Assert.AreEqual(2, new Solution().Calculate("1+2+3-4"));
+
+
+            Assert.AreEqual(1, new Solution().Calculate("1"));
+            Assert.AreEqual(1, new Solution().Calculate("(1)"));
+        }
+
+        [TestMethod()]
+        public void CountDigitOneTest()
+        {
+            Assert.AreEqual(1737167499, new Solution().CountDigitOne(1410065408));
+        }
+
+        [TestMethod()]
+        public void MaxSlidingWindowTest()
+        {
+            Assert.AreEqual("3,3,5,5,6,7", new Solution().MaxSlidingWindow(new int[] { 1, 3, -1, -3, 5, 3, 6, 7 }, 3).ToCompareString());
+            Assert.AreEqual("4,3,5", new Solution().MaxSlidingWindow(new int[] { 4, 3, 2, 1, 5 }, 3).ToCompareString());
+            Assert.AreEqual("7,4", new Solution().MaxSlidingWindow(new int[] { 7, 2, 4 }, 2).ToCompareString());
+        }
+
+        [TestMethod()]
+        public void AddStringsTest()
+        {
+            Assert.AreEqual("10", new Solution().AddStrings("1", "9"));
+            Assert.AreEqual("3", new Solution().AddStrings("1", "2"));
+            Assert.AreEqual("145357655744", new Solution().AddStrings("12312312", "145345343432"));
+
+        }
     }
 }

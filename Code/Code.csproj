@@ -40,6 +40,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="0\34.cs" />
+    <None Include="200\297.cs" />
+    <Compile Include="100\109.cs" />
+    <Compile Include="200\282.cs" />
+    <Compile Include="200\239.cs" />
+    <Compile Include="200\233.cs" />
+    <Compile Include="200\224.cs" />
+    <Compile Include="100\154.cs" />
+    <Compile Include="100\149.cs" />
+    <Compile Include="100\146.cs" />
+    <Compile Include="100\145.cs" />
+    <Compile Include="100\140.cs" />
+    <Compile Include="300\315.cs" />
+    <Compile Include="400\415.cs" />
+    <Compile Include="Core\Point.cs" />
+    <Compile Include="Core\ArrayHelper.cs" />
+    <Compile Include="NoIdea\132.cs" />
     <Compile Include="100\128.cs" />
     <Compile Include="100\126.cs" />
     <Compile Include="100\124.cs" />
@@ -77,6 +94,9 @@
     <Compile Include="Core\Interval.cs" />
     <Compile Include="Core\ListNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Basic\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
