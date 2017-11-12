@@ -10,24 +10,42 @@ public class Codec
     public string serialize(TreeNode root)
     {
         //In Order Traverse
-        var current = root;
-        Stack<TreeNode> s = new Stack<TreeNode>();
-        s.Push(root);
         StringBuilder sb = new StringBuilder();
-        while(s.Count>0)
+        serialize_Build(root, sb);
+        return sb.ToString();
+    }
+    string Null = ".";
+    char Spliter = ',';
+    void serialize_Build(TreeNode node, StringBuilder sb)
+    {
+        if (node == null)
+            sb.Append(Null).Append(Spliter);
+        else
         {
-            var node = s.Pop();
-            sb.Append(node.val + ",");
-            if (node.right != null)
-                s.Push(node.right);
-            if (node.left != null)
-                s.Push(node.left);
+            sb.Append(node.val).Append(Spliter);
+            serialize_Build(node.left, sb);
+            serialize_Build(node.right, sb);
         }
     }
 
     // Decodes your encoded data to tree.
     public TreeNode deserialize(string data)
     {
-
+        var d = data.Split(new char[] { Spliter }, StringSplitOptions.RemoveEmptyEntries);
+        Queue<string> q = new Queue<string>(d);
+        return deserialize_Build(q);
+    }
+    TreeNode deserialize_Build(Queue<string> q)
+    {
+        var v = q.Dequeue();
+        if (v == Null)
+            return null;
+        else
+        {
+            var t = new TreeNode(Convert.ToInt32(v));
+            t.left = deserialize_Build(q);
+            t.right = deserialize_Build(q);
+            return t;
+        }
     }
 }
