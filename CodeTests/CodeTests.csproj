@@ -57,6 +57,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="100\LRUCacheTests.cs" />
+    <Compile Include="100\MinStackTests.cs" />
+    <Compile Include="200\WordDictionaryTests.cs" />
     <Compile Include="Basic\PriorityQueueTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NumDistinctTest.cs" />
