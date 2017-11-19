@@ -52,6 +52,7 @@
     <Compile Include="0\56.cs" />
     <Compile Include="0\53.cs" />
     <Compile Include="0\50.cs" />
+    <Compile Include="0\70.cs" />
     <Compile Include="0\71.cs" />
     <Compile Include="0\75.cs" />
     <Compile Include="0\34.cs" />
@@ -59,6 +60,9 @@
     <Compile Include="0\91.cs" />
     <Compile Include="100\125.cs" />
     <None Include="100\127.cs" />
+    <Compile Include="100\189.cs" />
+    <Compile Include="100\164.cs" />
+    <Compile Include="200\204.cs" />
     <Compile Include="200\200.cs" />
     <Compile Include="200\273.cs" />
     <Compile Include="200\297.cs" />
@@ -76,14 +80,20 @@
     <Compile Include="100\145.cs" />
     <Compile Include="100\140.cs" />
     <Compile Include="300\322.cs" />
+    <Compile Include="300\349.cs" />
     <Compile Include="300\394.cs" />
     <Compile Include="300\376.cs" />
     <Compile Include="300\315.cs" />
+    <Compile Include="400\437.cs" />
+    <Compile Include="400\435.cs" />
+    <Compile Include="400\467.cs" />
+    <Compile Include="400\442.cs" />
     <Compile Include="400\415.cs" />
     <Compile Include="500\560.cs" />
     <Compile Include="500\504.cs" />
     <Compile Include="600\621.cs" />
     <Compile Include="600\632.cs" />
+    <Compile Include="600\657.cs" />
     <Compile Include="600\691.cs" />
     <Compile Include="600\687.cs" />
     <Compile Include="Core\Point.cs" />
@@ -125,6 +135,7 @@
     <Compile Include="Core\TreeNode.cs" />
     <Compile Include="Core\Interval.cs" />
     <Compile Include="Core\ListNode.cs" />
+    <Compile Include="todo\139.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

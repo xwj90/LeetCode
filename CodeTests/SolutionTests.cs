@@ -270,7 +270,9 @@ namespace Tests
         [TestMethod()]
         public void WordBreakTest()
         {
-            Assert.AreEqual(0, new Solution().WordBreak("catsanddog", new List<string>() { "cat", "cats", "and", "sand", "dog" }));
+            var v = new Solution().WordBreak("catsanddog", new List<string>() { "cat", "cats", "and", "sand", "dog" });
+            List<string> r = new List<string> { "cat sand dog", "cats and dog" };
+            Assert.IsTrue(v.OrderBy(p => p).SequenceEqual(r));
         }
 
         [TestMethod()]
@@ -496,13 +498,17 @@ namespace Tests
         }
 
         [TestMethod()]
+        [TestCategory("need more understanding")]
         public void PermuteUniqueTest()
         {
-            Assert.AreEqual(3, new Solution().PermuteUnique(new int[] { 1, 1, 2 }).Count);
+
             Assert.AreEqual(6, new Solution().PermuteUnique(new int[] { 1, 2, 3 }).Count);
+            var v = new Solution().PermuteUnique(new int[] { 1, 1, 2 });
+            Assert.AreEqual(3, v.Count);
         }
 
         [TestMethod()]
+
         public void CoinChangeTest()
         {
             Assert.AreEqual(-1, new Solution().CoinChange(new int[] { 2 }, 3));
@@ -586,6 +592,7 @@ namespace Tests
         public void FindSubstringInWraproundStringTest()
         {
             Assert.AreEqual(2, new Solution().FindSubstringInWraproundString("cac"));
+            Assert.Fail("time out");
 
         }
     }
