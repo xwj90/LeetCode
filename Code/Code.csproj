@@ -89,10 +89,12 @@
     <Compile Include="400\467.cs" />
     <Compile Include="400\442.cs" />
     <Compile Include="400\415.cs" />
+    <Compile Include="500\543.cs" />
     <Compile Include="500\560.cs" />
     <Compile Include="500\504.cs" />
     <Compile Include="600\621.cs" />
     <Compile Include="600\632.cs" />
+    <Compile Include="600\678.cs" />
     <Compile Include="600\657.cs" />
     <Compile Include="600\691.cs" />
     <Compile Include="600\687.cs" />
