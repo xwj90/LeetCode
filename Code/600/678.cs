@@ -12,6 +12,30 @@ public partial class Solution
     /// <returns></returns>
     public bool CheckValidString(string s)
     {
+        return CheckValidString_Go(s, 0, 0);
+    }
+    bool CheckValidString_Go(string s, int start, int count)
+    {
+        if (count < 0) return false;
+        for (int i = start; i < s.Length; i++)
+        {
+            if (s[i] == '(')
+                count++;
+            else if (s[i] == ')')
+            {
+                if (count <= 0) return false;
+                count--;
+            }
+            else if (s[i] == '*')
+            {
+                return CheckValidString_Go(s, i + 1, count) || CheckValidString_Go(s, i + 1, count - 1) || CheckValidString_Go(s, i + 1, count + 1);
+            }
+        }
+        return count == 0;
+    }
+    /*
+    public bool CheckValidString(string s)
+    {
         int low = 0;
         int high = 0;
         for (int i = 0; i < s.Length; i++)
@@ -38,5 +62,5 @@ public partial class Solution
         }
         return low == 0;
     }
-     
+     */
 }

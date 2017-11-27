@@ -14,7 +14,16 @@ namespace Tests
         public void WordBreakTest()
         {
             Assert.AreEqual(true, new Solution1().WordBreak("leetcode", new List<string>() { "leet", "code" }));
-         
+
+        }
+
+        [TestMethod()]
+        public void CalculateTest()
+        {
+            Assert.AreEqual(7, new Solution1().Calculate("3+2*2"));
+            Assert.AreEqual(1, new Solution1().Calculate("3/2"));
+            Assert.AreEqual(5, new Solution1().Calculate("3+5/2")); 
+
         }
     }
 }

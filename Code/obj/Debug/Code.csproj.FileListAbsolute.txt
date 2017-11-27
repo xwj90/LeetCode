@@ -3,3 +3,4 @@ C:\repos\LeetCode\Code\bin\Debug\Code.pdb
 C:\repos\LeetCode\Code\obj\Debug\Code.csproj.CoreCompileInputs.cache
 C:\repos\LeetCode\Code\obj\Debug\Code.dll
 C:\repos\LeetCode\Code\obj\Debug\Code.pdb
+C:\repos\LeetCode\Code\obj\Debug\Code.csprojResolveAssemblyReference.cache
