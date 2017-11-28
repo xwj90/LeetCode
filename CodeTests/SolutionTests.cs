@@ -604,5 +604,19 @@ namespace Tests
         {
             Assert.AreEqual(ListNode.Create(new int[] { 1, 0 }).ToString(), new Solution().PlusOne(new ListNode(9)).ToString());
         }
+
+        [TestMethod()]
+        public void CanPlaceFlowersTest()
+        {
+            Assert.AreEqual(false, new Solution().CanPlaceFlowers(new int[] { 1, 0, 1, 0, 1, 0, 1 }, 1));
+
+        }
+
+        [TestMethod()]
+        public void FindLongestWordTest()
+        {
+
+            Assert.AreEqual("apple", new Solution().FindLongestWord("abpcplea", new List<string> { "ale", "apple", "monkey", "plea" }));
+        }
     }
 }
