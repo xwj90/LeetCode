@@ -618,5 +618,29 @@ namespace Tests
 
             Assert.AreEqual("apple", new Solution().FindLongestWord("abpcplea", new List<string> { "ale", "apple", "monkey", "plea" }));
         }
+
+        [TestMethod()]
+        public void SubsetsWithDupTest()
+        {
+            // Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void ReconstructQueueTest()
+        {
+            new Solution().ReconstructQueue(new int[6, 2] {
+                {7,0 },
+                {4,4 },
+                {7,1 },
+                {5,0 },
+                {6,1 },
+                {5,2},
+            });
+
+            new Solution().ReconstructQueue(new int[10, 2]
+          {{8,2},{4,2},{4,5},{2,0},{7,2},{1,4},{9,1},{3,1},{9,0},{1,0}}
+
+          );
+        }
     }
 }
