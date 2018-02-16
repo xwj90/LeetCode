@@ -59,8 +59,10 @@
     <None Include="200\278.cs" />
     <Compile Include="0\90.cs" />
     <Compile Include="0\91.cs" />
+    <Compile Include="100\104.cs" />
     <Compile Include="100\125.cs" />
     <None Include="100\127.cs" />
+    <Compile Include="100\160.cs" />
     <Compile Include="100\198.cs" />
     <Compile Include="100\189.cs" />
     <Compile Include="100\164.cs" />
@@ -90,6 +92,8 @@
     <Compile Include="300\343.cs" />
     <Compile Include="300\349.cs" />
     <Compile Include="300\369.cs" />
+    <Compile Include="300\384.cs" />
+    <Compile Include="300\382.cs" />
     <Compile Include="300\394.cs" />
     <Compile Include="300\376.cs" />
     <Compile Include="300\315.cs" />
@@ -104,6 +108,7 @@
     <Compile Include="500\524.cs" />
     <Compile Include="500\515.cs" />
     <Compile Include="500\543.cs" />
+    <Compile Include="500\556.cs" />
     <Compile Include="500\557.cs" />
     <Compile Include="500\560.cs" />
     <Compile Include="500\504.cs" />
