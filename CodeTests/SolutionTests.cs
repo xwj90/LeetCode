@@ -642,5 +642,35 @@ namespace Tests
 
           );
         }
+
+        [TestMethod()]
+        public void RepeatedStringMatchTest()
+        {
+            Assert.AreEqual(2, new Solution().RepeatedStringMatch("abab", "aba"));
+
+            Assert.AreEqual(2, new Solution().RepeatedStringMatch("aa", "aaaa"));
+
+            Assert.AreEqual(2, new Solution().RepeatedStringMatch("a", "aa"));
+            Assert.AreEqual(2, new Solution().RepeatedStringMatch("aa", "aaa"));
+            Assert.AreEqual(3, new Solution().RepeatedStringMatch("aa", "aaaaa"));
+
+            Assert.AreEqual(3, new Solution().RepeatedStringMatch("abcd", "cdabcdab"));
+        }
+
+        [TestMethod()]
+        public void FindSubstringTest()
+
+        {
+
+
+            var s = new Solution().FindSubstring("wordgoodgoodgoodbestword", new string[] { "word", "good", "best", "good" });
+            Assert.IsTrue(s.AssertCheck(new int[] { 8 }));
+            s = new Solution().FindSubstring("barfoofoobarthefoobarman", new string[] { "bar", "foo", "the" });
+            Assert.IsTrue(s.AssertCheck(new int[] { 6, 9, 12 }));
+            s = new Solution().FindSubstring("abaababbaba", new string[] { "ba", "ab", "ab" });
+            Assert.IsTrue(s.AssertCheck(new int[] { 1, 3 }));
+            s = new Solution().FindSubstring("barfoothefoobarman", new string[] { "foo", "bar" });
+            Assert.IsTrue(s.AssertCheck(new int[] { 0, 9 }));
+        }
     }
 }

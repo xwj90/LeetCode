@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+
 
 public partial class Solution
 {
-    public int NextGreaterElement(int n)
+    public Solution()
     {
-        throw new NotImplementedException();
-        //var digs
+
     }
 }
+
