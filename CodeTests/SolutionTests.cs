@@ -588,8 +588,15 @@ namespace Tests
         [TestMethod()]
         public void FindSubstringInWraproundStringTest()
         {
+            Assert.AreEqual(6, new Solution().FindSubstringInWraproundString("zab"));
+
             Assert.AreEqual(2, new Solution().FindSubstringInWraproundString("cac"));
-            Assert.Fail("time out");
+
+            Assert.AreEqual(38207, new Solution().FindSubstringInWraproundString("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"));
+
+
+
+
 
         }
 
@@ -671,6 +678,41 @@ namespace Tests
             Assert.IsTrue(s.AssertCheck(new int[] { 1, 3 }));
             s = new Solution().FindSubstring("barfoothefoobarman", new string[] { "foo", "bar" });
             Assert.IsTrue(s.AssertCheck(new int[] { 0, 9 }));
+        }
+
+        [TestMethod()]
+        public void NextPermutationTest()
+        {
+            var s = new int[] { 2, 3, 1, 3, 3 };
+            new Solution().NextPermutation(s);
+            Assert.IsTrue(s.AssertCheckInOrder(new int[] { 2, 3, 3, 1, 3 }));
+
+
+            s = new int[] { 1, 3, 2 };
+            new Solution().NextPermutation(s);
+            Assert.IsTrue(s.AssertCheckInOrder(new int[] { 2, 1, 3 }));
+
+            s = new int[] { 2, 3, 1 };
+            new Solution().NextPermutation(s);
+            Assert.IsTrue(s.AssertCheckInOrder(new int[] { 3, 1, 2 }));
+
+
+
+
+            s = new int[] { 1, 2, 3 };
+            new Solution().NextPermutation(s);
+            Assert.IsTrue(s.AssertCheckInOrder(new int[] { 1, 3, 2 }));
+
+            s = new int[] { 3, 2, 1 };
+            new Solution().NextPermutation(s);
+            Assert.IsTrue(s.AssertCheckInOrder(new int[] { 1, 2, 3 }));
+
+            s = new int[] { 1, 1, 5 };
+            new Solution().NextPermutation(s);
+            Assert.IsTrue(s.AssertCheckInOrder(new int[] { 1, 5, 1 }));
+
+
+
         }
     }
 }

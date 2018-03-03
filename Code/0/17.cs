@@ -32,9 +32,7 @@ public partial class Solution
         {
             var list = FindLetterCombinations(follow);
             foreach (var item2 in list)
-            {
                 s.Add(item + item2);
-            }
         }
         letterList[digits] = s;
         return s;

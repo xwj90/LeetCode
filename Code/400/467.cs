@@ -8,17 +8,22 @@ public partial class Solution
 
     public int FindSubstringInWraproundString(string p)
     {
-        HashSet<string> hs = new HashSet<string>();
-        for (int i = 0; i < p.Length; i++)
+        Dictionary<char, int> len = new Dictionary<char, int>();
+        for (int start = 0; start < p.Length; start++)
         {
-            for (int j = 1; i + j <= p.Length; j++)
+            var end = start;
+            while (start == end ||
+                (end < p.Length && ((p[end] - p[end - 1] == 1) || (p[end] == 'a' && p[end - 1] == 'z'))))
             {
-                if (j == 1 || (p[i + j - 1] - p[i + j - 2] + 26) % 26 == 1)
-                    hs.Add(p.Substring(i, j));
-                else
-                    break;
+                if (!len.ContainsKey(p[end]))
+                    len[p[end]] = 0;
+                len[p[end]] = Math.Max(len[p[end]], end - start + 1);
+                end++;
             }
+            start = end - 1;
         }
-        return hs.Count;
+        return len.Sum(q => q.Value);
     }
+
+
 }

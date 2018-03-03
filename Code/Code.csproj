@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="0\18.cs" />
+    <Compile Include="0\31.cs" />
     <Compile Include="0\30.cs" />
     <Compile Include="0\40.cs" />
     <Compile Include="0\39.cs" />
@@ -101,6 +103,7 @@
     <Compile Include="100\146.cs" />
     <Compile Include="100\145.cs" />
     <Compile Include="100\140.cs" />
+    <Compile Include="300\327.cs" />
     <Compile Include="300\322.cs" />
     <Compile Include="300\343.cs" />
     <Compile Include="300\349.cs" />
