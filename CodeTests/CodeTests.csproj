@@ -60,6 +60,7 @@
     <Compile Include="100\MinStackTests.cs" />
     <Compile Include="200\WordDictionaryTests.cs" />
     <Compile Include="Basic\AssertHelper.cs" />
+    <Compile Include="Classic\Sort\QuickSortTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NumDistinctTest.cs" />
     <Compile Include="SolutionTests.cs" />
@@ -73,6 +74,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="55.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

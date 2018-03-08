@@ -52,6 +52,8 @@
     <Compile Include="0\18.cs" />
     <Compile Include="0\31.cs" />
     <Compile Include="0\30.cs" />
+    <Compile Include="0\38.cs" />
+    <Compile Include="0\37.cs" />
     <Compile Include="0\40.cs" />
     <Compile Include="0\39.cs" />
     <Compile Include="0\36.cs" />
@@ -61,7 +63,10 @@
     <Compile Include="0\46.cs" />
     <Compile Include="0\49.cs" />
     <Compile Include="0\48.cs" />
+    <Compile Include="0\51.cs" />
     <Compile Include="0\52.cs" />
+    <Compile Include="0\54.cs" />
+    <Compile Include="0\55.cs" />
     <Compile Include="0\56.cs" />
     <Compile Include="0\53.cs" />
     <Compile Include="0\50.cs" />
@@ -139,9 +144,11 @@
     <Compile Include="600\692.cs" />
     <Compile Include="600\691.cs" />
     <Compile Include="600\687.cs" />
+    <Compile Include="Classic\Sort\QuickSort.cs" />
     <Compile Include="Core\Point.cs" />
     <Compile Include="Core\ArrayHelper.cs" />
     <Compile Include="Core\Solution.cs" />
+    <Compile Include="Core\SudokuHelper.cs" />
     <Compile Include="NoIdea\132.cs" />
     <Compile Include="100\128.cs" />
     <Compile Include="100\126.cs" />

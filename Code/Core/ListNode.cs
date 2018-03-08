@@ -22,6 +22,7 @@ public class ListNode
         }
         return start;
     }
+    
     public override string ToString()
     {
         StringBuilder sb = new StringBuilder();
@@ -45,4 +46,17 @@ public class ListNode
         return this.ToString().GetHashCode();
     }
 }
-
+public static class ListNodeHelper
+{
+    public static int[]  ToArray(this ListNode node)
+    {
+        List<int> r = new List<int>();
+        var c = node;
+        while(c!=null)
+        {
+            r.Add(c.val);
+            c = c.next;
+        }
+        return r.ToArray();
+    }
+}

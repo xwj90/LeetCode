@@ -1,6 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Code;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,26 @@ namespace Tests
             Assert.AreEqual(true, new Solution().IsMatch("aab", "c*a*b"));
             Assert.AreEqual(false, new Solution().IsMatch("aaaaaaaaaaaaab", "a*a*a*a*a*a*a*a*a*a*c"));
             Assert.AreEqual(false, new Solution().IsMatch("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab", "a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*c"));
+
+
+        }
+
+        [TestMethod()]
+        public void IsMatch_44Test()
+        {
+            //Assert.AreEqual(false, new Solution().IsMatch_44("aaaabaaaabbbbaabbbaabbaababbabbaaaababaaabbbbbbaabbbabababbaaabaabaaaaaabbaabbbbaababbababaabbbaababbbba","*****b*aba***babaa*bbaba***a*aaba*b*aa**a*b**ba***a*a*"));
+
+
+            Assert.AreEqual(true, new Solution().IsMatch_44("aa", "a*"));
+            Assert.AreEqual(true, new Solution().IsMatch_44("aa", "*"));
+            Assert.AreEqual(false, new Solution().IsMatch_44("aa", "a"));
+            Assert.AreEqual(true, new Solution().IsMatch_44("aa", "aa"));
+            Assert.AreEqual(false, new Solution().IsMatch_44("aaa", "aa"));
+
+
+            Assert.AreEqual(true, new Solution().IsMatch_44("ab", "?*"));
+            Assert.AreEqual(false, new Solution().IsMatch_44("aab", "c*a*b"));
+
 
 
         }
@@ -653,7 +675,7 @@ namespace Tests
         [TestMethod()]
         public void RepeatedStringMatchTest()
         {
-            Assert.AreEqual(2, new Solution().RepeatedStringMatch("abab", "aba"));
+            Assert.AreEqual(1, new Solution().RepeatedStringMatch("abab", "aba"));
 
             Assert.AreEqual(2, new Solution().RepeatedStringMatch("aa", "aaaa"));
 
@@ -713,6 +735,97 @@ namespace Tests
 
 
 
+        }
+
+        [TestMethod()]
+        public void InsertionSortListTest()
+        {
+            int[] a = ArrayHelper.RandomGenerate(1000);
+            var b = new Solution().InsertionSortList(ListNode.Create(a)).ToArray();
+            Array.Sort(a);
+            Assert.IsTrue(a.AssertCheckInOrder(b));
+        }
+
+        [TestMethod()]
+        public void NextGreaterElementTest()
+        {
+            Assert.AreEqual(13222344, new Solution().NextGreaterElement(12443322));
+
+            Assert.AreEqual(21, new Solution().NextGreaterElement(12));
+            Assert.AreEqual(132, new Solution().NextGreaterElement(123));
+            Assert.AreEqual(-1, new Solution().NextGreaterElement(321));
+            Assert.AreEqual(-1, new Solution().NextGreaterElement(1999999999));
+
+
+        }
+
+        [TestMethod()]
+        public void CountRangeSumTest()
+        {
+            Assert.AreEqual(3, new Solution().CountRangeSum(new int[] { -2, 5, -1 }, -2, 2));
+        }
+
+        [TestMethod()]
+        public void LongestCommonPrefixTest()
+        {
+            Assert.AreEqual("a", new Solution().LongestCommonPrefix(new string[] { "aa", "a" }));
+            Assert.AreEqual("", new Solution().LongestCommonPrefix(new string[] { "", "" }));
+            Assert.AreEqual("ab", new Solution().LongestCommonPrefix(new string[] { "ab", "abc" }));
+        }
+
+        [TestMethod()]
+        public void SolveSudokuTest()
+        {
+
+            var board = new char[,] {
+{ '5','3','.','.','7','.','.','.','.' },
+{ '6','.','.','1','9','5','.','.','.' },
+{ '.','9','8','.','.','.','.','6','.' },
+{ '8','.','.','.','6','.','.','.','3' },
+{ '4','.','.','8','.','3','.','.','1' },
+{ '7','.','.','.','2','.','.','.','6' },
+{ '.','6','.','.','.','.','2','8','.' },
+{ '.','.','.','4','1','9','.','.','5' },
+{ '.','.','.','.','8','.','.','7','9' },
+
+            };
+            new Solution().SolveSudoku(board);
+            Assert.IsTrue(SudokuHelper.Check(board));
+
+
+
+        }
+
+        [TestMethod()]
+        public void SolveNQueensTest()
+        {
+            var result = new Solution().SolveNQueens(4);
+            Assert.AreEqual(2, result.Count);
+        }
+
+        [TestMethod()]
+        public void TotalNQueensTest()
+        {
+            for (int i = 1; i < 10; i++)
+            {
+                Assert.AreEqual(new Solution().SolveNQueens(i).Count, new Solution().TotalNQueens(i));
+            }
+        }
+
+        [TestMethod()]
+        public void SpiralOrderTest()
+        {
+            var m = ArrayHelper.GenerateMatrix();
+            var o = new Solution().SpiralOrder(m);
+            Assert.IsTrue(new int[] { 1, 2, 3, 6, 9, 8, 7, 4, 5 }.AssertCheck(o));
+        }
+
+        [TestMethod()]
+        [DeploymentItem("55.txt")]
+        public void CanJumpTest()
+        {
+            var s = File.ReadAllText("55.txt").Split(',').Select(p=>Convert.ToInt32(p)).ToArray();
+            Assert.AreEqual(false, new Solution().CanJump(s));
         }
     }
 }

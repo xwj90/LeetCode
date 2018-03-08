@@ -13,3 +13,4 @@ C:\repos\LeetCode\CodeTests\obj\Debug\CodeTests.csprojResolveAssemblyReference.c
 C:\repos\LeetCode\CodeTests\obj\Debug\CodeTests.csproj.CoreCompileInputs.cache
 C:\repos\LeetCode\CodeTests\obj\Debug\CodeTests.dll
 C:\repos\LeetCode\CodeTests\obj\Debug\CodeTests.pdb
+C:\repos\LeetCode\CodeTests\bin\Debug\55.txt
