@@ -5,11 +5,17 @@ public partial class Solution
 {
     public int ClimbStairs(int n)
     {
-        if (n == 1)
+        if (n == 0 || n == 1)
             return 1;
-        else if (n == 2)
-            return 2;
-        return ClimbStairs(n - 1) + ClimbStairs(n - 2);
+        int step1 = 1;
+        int step2 = 2;
+        for (int i = 3; i <= n; i++)
+        {
+            var step = step1 + step2;
+            step1 = step2;
+            step2 = step;
+        }
+        return step2;
     }
 
 }

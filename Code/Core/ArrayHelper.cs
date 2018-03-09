@@ -72,5 +72,10 @@ public static class ArrayHelper
         }
         return sb.ToString();
     }
+
+    //public static string ToFlatString(this int[,] s)
+    //{
+
+    //}
 }
 

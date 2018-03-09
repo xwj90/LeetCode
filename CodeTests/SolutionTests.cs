@@ -824,8 +824,49 @@ namespace Tests
         [DeploymentItem("55.txt")]
         public void CanJumpTest()
         {
-            var s = File.ReadAllText("55.txt").Split(',').Select(p=>Convert.ToInt32(p)).ToArray();
+            var s = File.ReadAllText("55.txt").Split(',').Select(p => Convert.ToInt32(p)).ToArray();
             Assert.AreEqual(false, new Solution().CanJump(s));
+        }
+
+        [TestMethod()]
+        public void LengthOfLastWordTest()
+        {
+            Assert.AreEqual(1, new Solution().LengthOfLastWord("a"));
+            Assert.AreEqual(1, new Solution().LengthOfLastWord("a "));
+        }
+
+        [TestMethod()]
+        public void GenerateMatrixTest()
+        {
+            var m = new Solution().GenerateMatrix(3);
+        }
+
+        [TestMethod()]
+        public void UniquePathsTest()
+        {
+            Assert.AreEqual(1, new Solution().UniquePaths(1, 2));
+        }
+
+        [TestMethod()]
+        public void ClimbStairsTest()
+        {
+            Assert.AreEqual(2, new Solution().ClimbStairs(2));
+            Assert.AreEqual(3, new Solution().ClimbStairs(3));
+        }
+
+        [TestMethod()]
+        public void SearchMatrixTest()
+        {
+            Assert.AreEqual(true, new Solution().SearchMatrix(new int[,] { { 1, 3, 5, 7 }, { 10, 11, 16, 20 }, { 23, 30, 34, 50 } }, 3));
+
+
+        }
+
+        [TestMethod()]
+        public void CombineTest()
+        {
+            var r = new Solution().Combine(4, 2);
+            Assert.AreEqual(6, r.Count);
         }
     }
 }
