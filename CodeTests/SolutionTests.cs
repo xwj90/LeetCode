@@ -29,25 +29,25 @@ namespace Tests
 
         }
 
-        [TestMethod()]
-        public void IsMatch_44Test()
-        {
-            //Assert.AreEqual(false, new Solution().IsMatch_44("aaaabaaaabbbbaabbbaabbaababbabbaaaababaaabbbbbbaabbbabababbaaabaabaaaaaabbaabbbbaababbababaabbbaababbbba","*****b*aba***babaa*bbaba***a*aaba*b*aa**a*b**ba***a*a*"));
+        //[TestMethod()]
+        //public void IsMatch_44Test()
+        //{
+        //    //Assert.AreEqual(false, new Solution().IsMatch_44("aaaabaaaabbbbaabbbaabbaababbabbaaaababaaabbbbbbaabbbabababbaaabaabaaaaaabbaabbbbaababbababaabbbaababbbba","*****b*aba***babaa*bbaba***a*aaba*b*aa**a*b**ba***a*a*"));
 
 
-            Assert.AreEqual(true, new Solution().IsMatch_44("aa", "a*"));
-            Assert.AreEqual(true, new Solution().IsMatch_44("aa", "*"));
-            Assert.AreEqual(false, new Solution().IsMatch_44("aa", "a"));
-            Assert.AreEqual(true, new Solution().IsMatch_44("aa", "aa"));
-            Assert.AreEqual(false, new Solution().IsMatch_44("aaa", "aa"));
+        //    Assert.AreEqual(true, new Solution().IsMatch_44("aa", "a*"));
+        //    Assert.AreEqual(true, new Solution().IsMatch_44("aa", "*"));
+        //    Assert.AreEqual(false, new Solution().IsMatch_44("aa", "a"));
+        //    Assert.AreEqual(true, new Solution().IsMatch_44("aa", "aa"));
+        //    Assert.AreEqual(false, new Solution().IsMatch_44("aaa", "aa"));
 
 
-            Assert.AreEqual(true, new Solution().IsMatch_44("ab", "?*"));
-            Assert.AreEqual(false, new Solution().IsMatch_44("aab", "c*a*b"));
+        //    Assert.AreEqual(true, new Solution().IsMatch_44("ab", "?*"));
+        //    Assert.AreEqual(false, new Solution().IsMatch_44("aab", "c*a*b"));
 
 
 
-        }
+        //}
 
         [TestMethod()]
         public void MaxAreaTest()
@@ -867,6 +867,29 @@ namespace Tests
         {
             var r = new Solution().Combine(4, 2);
             Assert.AreEqual(6, r.Count);
+        }
+
+        [TestMethod()]
+        public void ExistTest()
+        {
+            new Solution().Exist(new char[,] { { 'a', 'a' } }, "aaa");
+        }
+
+        [TestMethod()]
+        public void DeleteDuplicatesTest()
+        {
+            Assert.AreEqual(new Solution().DeleteDuplicates(ListNode.Create(new int[] { 1, 1, 1, 2, 3 }))
+                , ListNode.Create(new int[] { 2, 3 }));
+        }
+
+        [TestMethod()]
+        public void PartitionTest()
+        {
+            Assert.AreEqual(new Solution().Partition(ListNode.Create(new int[] { 1, 4, 3, 2, 5, 2 }), 3)
+               , ListNode.Create(new int[] { 1, 2, 2, 4, 3, 5 }));
+
+            Assert.AreEqual(new Solution().Partition(ListNode.Create(new int[] { 2, 1 }), 2)
+               , ListNode.Create(new int[] { 1, 2 }));
         }
     }
 }

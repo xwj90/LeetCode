@@ -58,7 +58,7 @@
     <Compile Include="0\39.cs" />
     <Compile Include="0\36.cs" />
     <Compile Include="0\43.cs" />
-    <Compile Include="0\44.cs" />
+    <None Include="0\44.cs" />
     <Compile Include="0\47.cs" />
     <Compile Include="0\46.cs" />
     <Compile Include="0\49.cs" />
@@ -83,6 +83,11 @@
     <Compile Include="0\75.cs" />
     <Compile Include="0\34.cs" />
     <None Include="200\278.cs" />
+    <Compile Include="0\78.cs" />
+    <None Include="0\81.cs" />
+    <Compile Include="0\86.cs" />
+    <Compile Include="0\82.cs" />
+    <Compile Include="0\79.cs" />
     <Compile Include="0\77.cs" />
     <Compile Include="0\90.cs" />
     <Compile Include="0\91.cs" />

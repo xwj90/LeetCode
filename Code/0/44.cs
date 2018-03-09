@@ -5,12 +5,12 @@ public partial class Solution
 {
     /// <summary>
     /// 44. Wildcard Matching 
-    /// please change method name to IsMatch
+    /// please change to complie 
     /// </summary>
     /// <param name="s"></param>
     /// <param name="p"></param>
     /// <returns></returns>
-    public bool IsMatch_44(string s, string p)
+    public bool IsMatch(string s, string p)
     {
         var i = 0;
         var j = 0;
