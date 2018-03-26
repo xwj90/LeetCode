@@ -581,13 +581,16 @@ namespace Tests
         [TestMethod()]
         public void FindLaddersTest()
         {
-            Assert.AreEqual(2, new Solution().FindLadders("hit", "cog", new List<string>() { "hot", "dot", "dog", "lot", "log", "cog" }).Count);
 
+            Assert.AreEqual(3, new Solution().FindLadders("red", "tax", new List<string>() { "ted", "tex", "red", "tax", "tad", "den", "rex", "pee" }).Count);
+            Assert.AreEqual(2, new Solution().FindLadders("hit", "cog", new List<string>() { "hot", "dot", "dog", "lot", "log", "cog" }).Count);
 
             var v = new Solution().FindLadders(
                      "qa", "sq", new List<string>() { "si", "go", "se", "cm", "so", "ph", "mt", "db", "mb", "sb", "kr", "ln", "tm", "le", "av", "sm", "ar", "ci", "ca", "br", "ti", "ba", "to", "ra", "fa", "yo", "ow", "sn", "ya", "cr", "po", "fe", "ho", "ma", "re", "or", "rn", "au", "ur", "rh", "sr", "tc", "lt", "lo", "as", "fr", "nb", "yb", "if", "pb", "ge", "th", "pm", "rb", "sh", "co", "ga", "li", "ha", "hz", "no", "bi", "di", "hi", "qa", "pi", "os", "uh", "wm", "an", "me", "mo", "na", "la", "st", "er", "sc", "ne", "mn", "mi", "am", "ex", "pt", "io", "be", "fm", "ta", "tb", "ni", "mr", "pa", "he", "lr", "sq", "ye" });
             Assert.AreEqual(51, v.Count);
-            Assert.AreEqual(3, new Solution().FindLadders("red", "tax", new List<string>() { "ted", "tex", "red", "tax", "tad", "den", "rex", "pee" }).Count);
+
+
+
 
 
         }
@@ -890,6 +893,35 @@ namespace Tests
 
             Assert.AreEqual(new Solution().Partition(ListNode.Create(new int[] { 2, 1 }), 2)
                , ListNode.Create(new int[] { 1, 2 }));
+        }
+
+        [TestMethod()]
+        public void AccountsMergeTest()
+        {
+            new Solution().AccountsMerge(new List<IList<string>>());
+        }
+
+        [TestMethod()]
+        public void RestoreIpAddressesTest()
+        {
+            var s = new Solution().RestoreIpAddresses("010010");
+
+            s = new Solution().RestoreIpAddresses("0000");
+            s = new Solution().RestoreIpAddresses("0279245587303");
+
+
+        }
+
+        [TestMethod()]
+        public void NumTreesTest()
+        {
+            Assert.AreEqual(5, new Solution().NumTrees(3));
+        }
+
+        [TestMethod()]
+        public void ConvertToTitleTest()
+        {
+            new Solution().ConvertToTitle(1000000001);
         }
     }
 }
