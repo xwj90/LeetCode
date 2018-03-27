@@ -125,9 +125,13 @@
     <None Include="100\153.cs" />
     <Compile Include="100\152.cs" />
     <Compile Include="100\160.cs" />
+    <Compile Include="100\169.cs" />
+    <Compile Include="100\179.cs" />
     <Compile Include="100\171.cs" />
     <Compile Include="100\168.cs" />
     <Compile Include="100\167.cs" />
+    <Compile Include="100\187.cs" />
+    <Compile Include="100\190.cs" />
     <Compile Include="100\198.cs" />
     <Compile Include="100\189.cs" />
     <Compile Include="100\164.cs" />
