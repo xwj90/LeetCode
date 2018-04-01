@@ -138,9 +138,11 @@
     <Compile Include="100\100.cs" />
     <Compile Include="200\204.cs" />
     <Compile Include="200\200.cs" />
+    <Compile Include="200\215.cs" />
     <Compile Include="200\227.cs" />
     <Compile Include="200\237.cs" />
     <Compile Include="200\252.cs" />
+    <Compile Include="200\26.cs" />
     <Compile Include="200\256.cs" />
     <Compile Include="200\273.cs" />
     <Compile Include="200\253.cs" />
@@ -158,6 +160,7 @@
     <Compile Include="100\146.cs" />
     <Compile Include="100\145.cs" />
     <Compile Include="100\140.cs" />
+    <Compile Include="300\333.cs" />
     <Compile Include="300\327.cs" />
     <Compile Include="300\322.cs" />
     <Compile Include="300\343.cs" />
@@ -168,6 +171,7 @@
     <Compile Include="300\394.cs" />
     <Compile Include="300\376.cs" />
     <Compile Include="300\315.cs" />
+    <Compile Include="400\402.cs" />
     <Compile Include="400\406.cs" />
     <Compile Include="400\491.cs" />
     <Compile Include="400\447.cs" />
@@ -184,6 +188,7 @@
     <Compile Include="500\560.cs" />
     <Compile Include="500\504.cs" />
     <Compile Include="600\605.cs" />
+    <Compile Include="600\633.cs" />
     <Compile Include="600\621.cs" />
     <Compile Include="600\632.cs" />
     <Compile Include="600\651.cs" />
