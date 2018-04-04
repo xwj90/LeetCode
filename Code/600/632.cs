@@ -5,31 +5,55 @@ using System.Text;
 
 public partial class Solution
 {
+	public int[] SmallestRange(IList<IList<int>> nums)
+	{
+		List<Tuple<int, int>> sort = new List<Tuple<int, int>>();
+		for (int i = 0; i < nums.Count; i++)
+			SmallestRange_Insert(sort, nums[i][0], i);
 
-    public TreeNode AddOneRow(TreeNode root, int v, int d)
-    {
-        TreeNode fake = new TreeNode(-1);
-        fake.left = root;
-        Traverse(fake, 1, v, d);
-        return fake.left;
-    }
-    public void Traverse(TreeNode node, int level, int v, int d)
-    {
-        if (node == null)
-            return;
-        if (level == d)
-        {
-            TreeNode leftNode = new TreeNode(v);
-            leftNode.left = node.left;
-            node.left = leftNode;
+		int[] result = new int[] { sort[0].Item1, sort[sort.Count - 1].Item1 };
+		int[] ids = new int[nums.Count];
 
-            TreeNode rightNode = new TreeNode(v);
-            rightNode.right = node.right;
-            node.right = rightNode;
+		int groupId = sort[0].Item2;
+		int id = ++ids[groupId];
+		while (id < nums[groupId].Count)
+		{
+			sort.RemoveAt(0);
+			SmallestRange_Insert(sort, nums[groupId][id], groupId);
+			if ((sort[sort.Count - 1].Item1 - sort[0].Item1) < (result[1] - result[0]))
+				result = new int[] { sort[0].Item1, sort[sort.Count - 1].Item1 };
+			groupId = sort[0].Item2;
+			id = ++ids[groupId];
+		}
+		return result;
+	}
+	public void SmallestRange_Insert(List<Tuple<int, int>> list, int value, int groupId)
+	{
+		if (list.Count == 0 || value >= list[list.Count - 1].Item1)
+		{
+			list.Add(new Tuple<int, int>(value, groupId));
+		}
+		else
+		{
+			int left = 0;
+			int right = list.Count - 1;
+			var mid = 0;
+			while (left < right)
+			{
+				mid = (left + right) / 2;
+				if (value > list[mid].Item1)
+					left = mid + 1;
+				else if (value < list[mid].Item1)
+					right = mid;
+				else
+				{
+					left = mid;
+					break;
+				}
+			}
+			list.Insert(left, new Tuple<int, int>(value, groupId));
+		}
+	}
 
-        }
 
-        Traverse(node.left, level + 1, v, d);
-        Traverse(node.right, level + 1, v, d);
-    }
 }
