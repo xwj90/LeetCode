@@ -5,7 +5,6 @@
  */
 public class Solution
 {
-    Dictionary<(string, string), int> dict = new Dictionary<(string, string), int>();
     public int MinDistance(string word1, string word2)
     {
         var m = word1.Length;
