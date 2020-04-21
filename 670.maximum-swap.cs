@@ -11,18 +11,18 @@ public class Solution
         digs.Reverse();
 
 
-        var max = (new (int, int)[digs.Count]).ToList();
-        for (var i = max.Count - 1; i >= 0; i--)
+        var max = new (int value, int idx)[digs.Count];
+        for (var i = max.Length - 1; i >= 0; i--)
         {
             max[i] = (digs[i], i);
-            if (i < max.Count - 1 && max[i].Item1 <= max[i + 1].Item1)
+            if (i < max.Length - 1 && max[i].value <= max[i + 1].value)
                 max[i] = max[i + 1];
         }
 
         for (var i = 0; i < digs.Count - 1; i++)
-            if (max[i + 1].Item1 > digs[i])
+            if (max[i + 1].value > digs[i])
             {
-                var j = max[i + 1].Item2;
+                var j = max[i + 1].idx;
                 var temp = digs[i];
                 digs[i] = digs[j];
                 digs[j] = temp;

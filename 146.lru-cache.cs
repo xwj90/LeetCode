@@ -1,16 +1,17 @@
-/*
- * @lc app=leetcode id=146 lang=csharp
- *
- * [146] LRU Cache
- */
-
-// @lc code=start
 public class LRUCache
 {
-
-    Dictionary<int, int> dict = new Dictionary<int, int>();
-    List<int> q = new List<int>();
+    private class LinkedNode
+    {
+        public int Key;
+        public int Value;
+        public LinkedNode Prev;
+        public LinkedNode Next;
+    }
+    Dictionary<int, LinkedNode> dict = new Dictionary<int, LinkedNode>();
     int maxCapacity = 0;
+    private LinkedNode head;
+    private LinkedNode end;
+
     public LRUCache(int capacity)
     {
         this.maxCapacity = capacity;
@@ -20,20 +21,52 @@ public class LRUCache
     {
         if (dict.ContainsKey(key))
         {
-            RefreshKey(key);
-            return dict[key];
+            var node = this.dict[key];
+            Refresh(node);
+            return node.Value;
         }
         return -1;
     }
 
     public void Put(int key, int value)
     {
-        dict[key] = dict[value];
-        RefreshKey(key);
+        LinkedNode node = new LinkedNode() { Key = key, Value = value };
+        if (!dict.ContainsKey(key))
+            dict[key] = node;
+        else
+            node = dict[key];
+        node.Value = value;
+        
+        Refresh(node);
+        if (dict.Count > this.maxCapacity)
+        {
+            Console.WriteLine($" remove {head.Key}");
+            dict.Remove(head.Key);
+            head = head.Next;
+            if (head != null) head.Prev = null;
+        }
     }
-    public void RefreshKey(string key)
-    {
 
+    private void Refresh(LinkedNode node)
+    {
+        if (head == null)
+        {
+            head = node;
+            end = node;
+        }
+        else if (end != node)
+        {
+            if (node.Prev != null)
+                node.Prev.Next = node.Next;
+            if (node.Next != null)
+                node.Next.Prev = node.Prev;
+            if (head == node)
+                head = head.Next;
+            end.Next = node;
+            node.Prev = end;
+            node.Next = null;
+            end = node;
+        }
     }
 }
 

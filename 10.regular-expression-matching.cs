@@ -1,74 +1,35 @@
 public class Solution
 {
-    Dictionary<(string, string), bool> dict = new Dictionary<(string, string), bool>();
     public bool IsMatch(string s, string p)
     {
-        if (s.Length == 0 && p.Length == 0)
-            return true;
-        var result = false;
-        if (p.Length > 1 && p[1] == '*')
-            result = IsMatch(s, p.Substring(2));
-        if (!result)
-        {
-            if ((s.Length > 0 && p.Length == 0) || (s.Length == 0 && p.Length > 0))
-                return false;
+        if (s == null || p == null) return false;
+        var dp = new bool[s.Length + 1, p.Length + 1];
+        dp[0, 0] = true;
 
-            if (dict.ContainsKey((s, p)))
+        // check  a*b*a*.* pattern
+        for (var i = 0; i < p.Length; i++)
+        {
+            if (p[i] == '*' && dp[0, i - 1]) dp[0, i + 1] = true;
+        }
+
+        for (var i = 1; i <= s.Length; i++)
+        {
+            for (var j = 1; j <= p.Length; j++)
             {
-                return dict[(s, p)];
-            }
-            else if (p[0] == s[0])
-            {
-                if (p.Length > 1 && p[1] == '*')
+                var currentS = s[i - 1];
+                var currentP = p[j - 1];
+                if (currentP == '.' || currentP == currentS)
+                    dp[i, j] = dp[i - 1, j - 1];
+                else if (currentP == '*')
                 {
-                    var match = IsMatch(s, p.Substring(2));
-                    if (match) result = true;
+                    var previousP = p[j - 2];
+                    if (previousP != currentS && previousP != '.')
+                        dp[i, j] = dp[i, j - 2]; //can't use .* or a* pattern and so that we have consider .*=="" 
                     else
-                    {
-                        var index = 0;
-                        while (index < s.Length && s[index] == p[0])
-                        {
-                            if (IsMatch(s.Substring(index + 1), p.Substring(2)))
-                            {
-                                result = true;
-                            }
-                            index++;
-                        }
-                    }
-                }
-                else
-                {
-                    result = IsMatch(s.Substring(1), p.Substring(1));
-                }
-            }
-            else if (p[0] == '.')
-            {
-                if (p.Length > 1 && p[1] == '*')
-                {
-                    var match = IsMatch(s, p.Substring(2));
-                    if (match) result = true;
-                    else
-                    {
-                        var index = 0;
-                        while (index < s.Length)
-                        {
-                            if (IsMatch(s.Substring(index + 1), p.Substring(2)))
-                            {
-                                result = true;
-                            }
-                            index++;
-                        }
-                    }
-                }
-                else
-                {
-                    result = IsMatch(s.Substring(1), p.Substring(1));
+                        dp[i, j] = dp[i, j - 2] || dp[i - 1, j - 2] || dp[i - 1, j]; // a*=="" or a*=="a"  or a*=="aa..."
                 }
             }
         }
-        dict[(s, p)] = result;
-        return result;
+        return dp[s.Length, p.Length];
     }
 }
-// @lc code=end
-

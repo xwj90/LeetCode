@@ -3,36 +3,22 @@ public class Solution
     public IList<int> FindAnagrams(string s, string p)
     {
         var res = new List<int>();
-        var q = new Queue<char>();
-        var dict = new Dictionary<char, int>();
-        var count = p.Length;
+        var target = new int[26];
+        var current = new int[26];
         foreach (var c in p)
-            if (!dict.ContainsKey(c)) dict[c] = 1;
-            else dict[c]++;
+            target[c - 'a']++;
 
-        for (var i = 0; i < s.Length; i++)
+        for (int i = 0; i < s.Length; i++)
         {
-            var c = s[i];
-            if (count == 0 && q.Any())
-            {
-                var item = q.Dequeue();
-                dict[item]++;
-            }
+            current[s[i] - 'a']++;
 
-            if (dict.ContainsKey(c) && dict[c] > 0)
-            {
-                dict[c]--;
-                count--;
-                if (count == 0) res.Add(i);
-            }
-            else
-            {
-                q.Clear();
-                count = p.Length;
-            }
+            if (i >= p.Length)
+                current[s[i - p.Length] - 'a']--;
+
+            if (Enumerable.SequenceEqual(current, target))
+                res.Add(i - p.Length + 1);
         }
         return res;
-
     }
 }
 // @lc code=end
