@@ -18,7 +18,6 @@ public class Solution
         if (k % 2 == 1)
             nums[0] = -nums[0];
         return nums.Sum();
-
     }
 }
 
