@@ -11,7 +11,8 @@ public class Solution
     {
         return new int[] {
         BinarySearch(nums, target, true),
-        BinarySearch(nums, target, false)         };
+        BinarySearch(nums, target, false)
+            };
 
     }
 
